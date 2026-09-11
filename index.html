@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abthal Akbar — Software Engineer</title>
+<meta name="description" content="Portofolio Abthal Akbar, Software Engineer.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- LEFT: tab navigation -->
+  <nav class="tabnav" aria-label="Navigasi bagian">
+
+    <p class="tabnav-category">✦ main</p>
+    <button class="tab-btn is-active" data-tab="about" type="button">
+      <span class="tab-icon">◈</span> about me
+    </button>
+    <button class="tab-btn" data-tab="skills" type="button">
+      <span class="tab-icon">◈</span> skills
+    </button>
+    <button class="tab-btn" data-tab="experience" type="button">
+      <span class="tab-icon">◈</span> experience
+    </button>
+    <button class="tab-btn" data-tab="projects" type="button">
+      <span class="tab-icon">◈</span> project
+    </button>
+    <button class="tab-btn" data-tab="competition" type="button">
+      <span class="tab-icon">◈</span> competition
+    </button>
+    <button class="tab-btn" data-tab="certification" type="button">
+      <span class="tab-icon">◈</span> certification
+    </button>
+
+    <div class="tabnav-divider"></div>
+
+    <p class="tabnav-category">✦ fun</p>
+    <button class="tab-btn" data-tab="collections" type="button">
+      <span class="tab-icon">◈</span> GamesVault
+    </button>
+    <button class="tab-btn" data-tab="minesweeper" type="button">
+      <span class="tab-icon">◈</span> minesweeper
+    </button>
+    <button class="tab-btn" data-tab="paintboard" type="button">
+      <span class="tab-icon">◈</span> paintboard
+    </button>
+
+    <div class="tabnav-divider"></div>
+
+    <div class="status-card">
+      <span class="status-dot"></span>
+      open for work
+    </div>
+  </nav>
+
+  <!-- CENTER: content panel -->
+  <main class="panel">
+
+    <section id="about" class="tab-section is-active">
+      <h2 class="section-title">about me</h2>
+
+      <!-- profile card (pengganti hero) -->
+      <div class="glass-card profile-card">
+        <div class="profile-badge">
+          <img src="assets/img/avatar-placeholder.svg" alt="Foto profil" class="avatar">
+        </div>
+        <div class="profile-text">
+          <p class="profile-eyebrow">// halo, dunia</p>
+          <h1>Abthal Akbar</h1>
+          <p class="profile-role">Software Engineer &middot; Web &amp; Backend</p>
+          <p class="profile-tagline">Placeholder tagline — ganti dengan satu-dua kalimat tentang apa yang kamu bangun dan apa yang kamu suka dari engineering.</p>
+        </div>
+      </div>
+
+      <div class="glass-card about-card">
+        <p>
+          Placeholder bio — tulis 3–5 kalimat tentang siapa kamu, latar belakang, dan
+          jenis masalah yang paling kamu suka pecahkan sebagai software engineer.
+          Ganti teks ini di <code>index.html</code> pada bagian <code>#about</code>.
+        </p>
+        <p>
+          Kamu juga bisa cerita hobi atau minat di luar coding di sini — bagian ini
+          yang bikin portofolio kamu terasa personal, bukan cuma daftar teknis.
+        </p>
+      </div>
+
+      <div class="glass-card contact-card">
+        <h3 class="card-subtitle">hubungi saya</h3>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:emailkamu@example.com">
+              <span class="contact-icon">✉</span> emailkamu@example.com
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/username" target="_blank" rel="noopener">
+              <span class="contact-icon">⌥</span> github.com/username
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener">
+              <span class="contact-icon">in</span> linkedin.com/in/username
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/username" target="_blank" rel="noopener">
+              <span class="contact-icon">◎</span> @username
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="tab-section">
+      <h2 class="section-title">skills</h2>
+
+      <div class="glass-card">
+        <h3 class="card-subtitle">tech stack</h3>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <p class="skill-group-label">languages</p>
+            <div class="chip-row">
+              <span class="chip">JavaScript</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label">frameworks &amp; libraries</p>
+            <div class="chip-row">
+              <span class="chip">React</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express</span>
+              <span class="chip">Spring Boot</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label">tools &amp; infra</p>
+            <div class="chip-row">
+              <span class="chip">Git</span>
+              <span class="chip">Docker</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h3 class="card-subtitle">soft skills</h3>
+        <div class="chip-row">
+          <span class="chip chip-soft">Problem Solving</span>
+          <span class="chip chip-soft">Komunikasi Tim</span>
+          <span class="chip chip-soft">Manajemen Waktu</span>
+          <span class="chip chip-soft">Adaptif</span>
+          <span class="chip chip-soft">Kepemimpinan</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="tab-section">
+      <h2 class="section-title">experience</h2>
+      <div class="glass-card">
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date">2024 — sekarang</p>
+            <h3 class="timeline-role">Software Engineer — Nama Perusahaan</h3>
+            <p class="timeline-desc">
+              Placeholder deskripsi peran dan tanggung jawab. Sebutkan dampak
+              konkret, misalnya "membangun fitur X yang menaikkan Y sebesar Z%".
+            </p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2023 — 2024</p>
+            <h3 class="timeline-role">Software Engineer Intern — Nama Perusahaan</h3>
+            <p class="timeline-desc">
+              Placeholder deskripsi magang. Ceritakan tim yang kamu bantu dan
+              teknologi yang kamu pakai sehari-hari.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="projects" class="tab-section">
+      <h2 class="section-title">project</h2>
+      <div class="card-grid">
+        <article class="glass-card project-card">
+          <h3 class="card-subtitle">Nama Project 1</h3>
+          <p>Placeholder deskripsi singkat project, masalah apa yang dipecahkan dan peran kamu di dalamnya.</p>
+          <div class="chip-row">
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">live demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">source ↗</a>
+          </div>
+        </article>
+        <article class="glass-card project-card">
+          <h3 class="card-subtitle">Nama Project 2</h3>
+          <p>Placeholder deskripsi singkat project kedua kamu di sini.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">PostgreSQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">live demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">source ↗</a>
+          </div>
+        </article>
+        <article class="glass-card project-card">
+          <h3 class="card-subtitle">Nama Project 3</h3>
+          <p>Placeholder deskripsi singkat project ketiga kamu di sini.</p>
+          <div class="chip-row">
+            <span class="chip">TypeScript</span>
+            <span class="chip">Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">live demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">source ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="competition" class="tab-section">
+      <h2 class="section-title">competition</h2>
+      <div class="glass-card">
+        <ul class="award-list">
+          <li>
+            <span class="award-medal">🥇</span>
+            <div>
+              <p class="award-name">Juara 1 — Nama Kompetisi</p>
+              <p class="award-meta">Penyelenggara · 2025</p>
+            </div>
+          </li>
+          <li>
+            <span class="award-medal">🥈</span>
+            <div>
+              <p class="award-name">Juara 2 — Nama Kompetisi</p>
+              <p class="award-meta">Penyelenggara · 2024</p>
+            </div>
+          </li>
+          <li>
+            <span class="award-medal">🎖</span>
+            <div>
+              <p class="award-name">Finalis — Nama Kompetisi</p>
+              <p class="award-meta">Penyelenggara · 2024</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="certification" class="tab-section">
+      <h2 class="section-title">certification</h2>
+      <div class="glass-card">
+        <ul class="cert-list">
+          <li>
+            <div>
+              <p class="cert-name">Nama Sertifikasi</p>
+              <p class="award-meta">Penerbit · 2025</p>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="cert-link">lihat ↗</a>
+          </li>
+          <li>
+            <div>
+              <p class="cert-name">Nama Sertifikasi</p>
+              <p class="award-meta">Penerbit · 2024</p>
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="cert-link">lihat ↗</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="collections" class="tab-section">
+      <h2 class="section-title">collections</h2>
+      <div class="gallery-grid">
+        <!-- tambah gambar di sini: <img src="assets/img/..." alt="..."> -->
+        <div class="gallery-placeholder">+ tambah gambar</div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+      </div>
+    </section>
+
+    <section id="minesweeper" class="tab-section">
+      <h2 class="section-title">minesweeper</h2>
+      <div class="iframe-wrap">
+        <iframe
+          src="https://minesweeper.online/"
+          title="Minesweeper Online"
+          allowfullscreen
+          loading="lazy"
+        >
+          <p class="iframe-fallback">
+            Browser kamu tidak support iframe. 
+            <a href="https://minesweeper.online/" target="_blank" rel="noopener">Buka di tab baru ↗</a>
+          </p>
+        </iframe>
+        <div class="iframe-blocked" id="minesweeperBlocked" style="display:none">
+          <p>⚠️ minesweeper.online memblokir embed.</p>
+          <a href="https://minesweeper.online/" target="_blank" rel="noopener" class="iframe-open-btn">buka di tab baru ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="paintboard" class="tab-section">
+      <h2 class="section-title">paintboard</h2>
+      <div class="mspaint-window">
+
+        <!-- title bar -->
+        <div class="mspaint-titlebar">
+          <div class="mspaint-titlebar-left">
+            <span class="mspaint-appicon">🖼</span>
+            <span class="mspaint-title">paintboard - untitled</span>
+          </div>
+          <div class="mspaint-titlebar-btns">
+            <button class="mspaint-wbtn mspaint-wbtn--min" aria-label="Minimize">_</button>
+            <button class="mspaint-wbtn mspaint-wbtn--max" aria-label="Maximize">□</button>
+            <button class="mspaint-wbtn mspaint-wbtn--close" aria-label="Close" id="btnClear">✕</button>
+          </div>
+        </div>
+
+        <!-- menu bar -->
+        <div class="mspaint-menubar">
+          <span class="mspaint-menu-item">File</span>
+          <span class="mspaint-menu-item">Edit</span>
+          <span class="mspaint-menu-item">View</span>
+          <span class="mspaint-menu-item">Image</span>
+          <span class="mspaint-menu-item">Help</span>
+        </div>
+
+        <!-- toolbar + canvas area -->
+        <div class="mspaint-body">
+
+          <!-- left toolbar -->
+          <div class="mspaint-toolbar">
+            <button class="mspaint-tool is-active" data-tool="pencil" type="button" title="Pencil">✏️</button>
+            <button class="mspaint-tool" data-tool="eraser" type="button" title="Eraser">🧹</button>
+            <button class="mspaint-tool" data-tool="fill"   type="button" title="Fill (soon)" disabled>🪣</button>
+            <button class="mspaint-tool" data-tool="text"   type="button" title="Text (soon)" disabled>A</button>
+            <div class="mspaint-tool-divider"></div>
+            <div class="mspaint-brush-preview" id="brushPreview"></div>
+            <label class="mspaint-size-label" title="Brush size">
+              <input type="range" id="brushSize" min="1" max="20" value="3" orient="vertical">
+            </label>
+          </div>
+
+          <!-- scrollable canvas viewport -->
+          <div class="mspaint-canvas-wrap">
+            <canvas id="paintCanvas" width="800" height="400" aria-label="Kanvas gambar"></canvas>
+          </div>
+
+        </div>
+
+        <!-- color palette bar -->
+        <div class="mspaint-colorbar">
+          <div class="mspaint-active-colors">
+            <div class="mspaint-fg-preview" id="fgPreview"></div>
+            <div class="mspaint-bg-preview" id="bgPreview"></div>
+          </div>
+          <div class="mspaint-palette" id="paintColors"></div>
+          <div class="mspaint-colorbar-actions">
+            <button type="button" id="btnSave" title="Save as PNG">💾 save</button>
+          </div>
+        </div>
+
+        <!-- status bar -->
+        <div class="mspaint-statusbar">
+          <span id="paintCoords">0, 0</span>
+          <span class="mspaint-status-divider"></span>
+          <span id="paintTool">tool: pencil</span>
+          <span class="mspaint-status-divider"></span>
+          <span id="paintSize">size: 3</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RIGHT: widgets -->
+  <aside class="widgets" aria-label="Widget">
+
+    <div class="glass-card widget-card">
+      <div class="player-deck">
+        <div class="player-deck-label">WEB DECK</div>
+        <p class="player-track" id="playerTrackName">NO TRACK LOADED</p>
+        <div class="player-progress">
+          <div class="player-progress-fill" id="playerProgressFill"></div>
+        </div>
+        <audio id="audioEl" preload="metadata"></audio>
+        <div class="player-controls">
+          <button type="button" id="btnPrev" aria-label="Lagu sebelumnya">⏮</button>
+          <button type="button" id="btnPlay" aria-label="Putar/jeda">▶</button>
+          <button type="button" id="btnNext" aria-label="Lagu berikutnya">⏭</button>
+        </div>
+        <p class="player-hint">taruh file mp3 di <code>assets/music/</code></p>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <p>dibuat dengan ♡ pakai html, css &amp; javascript — hosted di github pages</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/paintboard.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

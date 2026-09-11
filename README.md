@@ -54,6 +54,6 @@ Selain section portofolio, website juga memiliki:
 
 ## Reference
 
-- [text](https://frutigeraeroarchive.org/)
-- [text](https://www.softicons.com/)
-- [text](https://www.softicons.com/system-icons/crystal-clear-icons-by-everaldo-coelho)
+- [frutiger aero archive](https://frutigeraeroarchive.org/)
+- [softicons](https://www.softicons.com/)
+- [crystal clear icons](https://www.softicons.com/system-icons/crystal-clear-icons-by-everaldo-coelho)

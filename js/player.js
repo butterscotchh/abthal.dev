@@ -1,38 +1,122 @@
 // ============================================================
-// player.js — mini mp3 player
+// player.js — web deck player (cover art + marquee edition)
 //
-// HOW TO ADD YOUR OWN SONGS:
-// 1. Put your .mp3 files inside assets/music/
-// 2. Add one entry per song to the PLAYLIST array below.
-//    "title" is what shows up in the player, "src" is the file path.
+// HOW TO ADD SONGS:
+// 1. Put .mp3 files in assets/music/
+// 2. Put cover images (jpg/png) in assets/music/covers/
+// 3. Add entries to PLAYLIST below.
+//    - title : displayed in the LCD strip
+//    - src   : path to .mp3
+//    - cover : path to cover image (optional — falls back to default.png)
 // ============================================================
 const PLAYLIST = [
-  // { title: "Nama Lagu — Artis", src: "assets/music/lagu-1.mp3" },
-  // { title: "Lagu Kedua — Artis", src: "assets/music/lagu-2.mp3" },
+  {
+    title: "Recover Decoration (Remix) — Kana Hanazawa",
+    src:   "assets/music/Kana Hanazawa - Recover Decoration (Remix).mp3",
+    cover: "assets/music/covers/1.jpg",
+  },
+  {
+    title: "Wii Party Soundtrack - Main Menu",
+    src:   "assets/music/Wii Party Soundtrack - Main Menu Music.mp3",
+    cover: "assets/music/covers/2.png",
+  },
+  // { title: "Song Title — Artist", src: "assets/music/file.mp3", cover: "assets/music/covers/file.png" },
 ];
 
 (function () {
-  const audio = document.getElementById("audioEl");
-  const trackNameEl = document.getElementById("playerTrackName");
-  const progressFill = document.getElementById("playerProgressFill");
-  const btnPlay = document.getElementById("btnPlay");
-  const btnPrev = document.getElementById("btnPrev");
-  const btnNext = document.getElementById("btnNext");
+  const audio       = document.getElementById("audioEl");
+  const trackEl     = document.getElementById("playerTrackName");
+  const progressFill= document.getElementById("playerProgressFill");
+  const btnPlay     = document.getElementById("btnPlay");
+  const btnPrev     = document.getElementById("btnPrev");
+  const btnNext     = document.getElementById("btnNext");
+  const coverImg    = document.getElementById("playerCover");
+  const coverFallback = document.getElementById("playerCoverFallback");
+  const marqueeWrap = trackEl ? trackEl.closest(".player-marquee-wrap") : null;
 
   if (!audio) return;
 
   let currentIndex = 0;
+  let marqueeTimer = null;
 
+  // ---- marquee logic ----
+  // If the text is wider than its container, duplicate it and scroll.
+  function applyMarquee() {
+    if (!trackEl || !marqueeWrap) return;
+
+    // reset first
+    trackEl.classList.remove("is-scrolling");
+    trackEl.style.removeProperty("--marquee-offset");
+    // strip any duplication from previous call
+    trackEl.textContent = trackEl.textContent.replace(/\s{4}.*$/, "");
+
+    clearTimeout(marqueeTimer);
+
+    // defer one frame so browser can measure after text update
+    marqueeTimer = setTimeout(() => {
+      const textW = trackEl.scrollWidth;
+      const wrapW = marqueeWrap.clientWidth;
+
+      if (textW <= wrapW) return; // fits — no scroll needed
+
+      // duplicate text with a gap so the loop is seamless
+      const gap = "    ✦    ";
+      const original = trackEl.textContent;
+      trackEl.textContent = original + gap + original;
+
+      // offset = exactly half the total width (= one copy + gap)
+      const totalW = trackEl.scrollWidth;
+      const offset = -(totalW / 2);
+      trackEl.style.setProperty("--marquee-offset", offset + "px");
+
+      // speed: ~60px/s feels natural
+      const duration = Math.abs(offset) / 60;
+      trackEl.style.animationDuration = duration + "s";
+      trackEl.classList.add("is-scrolling");
+    }, 50);
+  }
+
+  // ---- cover art ----
+  function loadCover(src) {
+    if (!coverImg || !coverFallback) return;
+
+    const DEFAULT = "assets/music/covers/default.png";
+    const url = src || DEFAULT;
+
+    // show img, hide fallback initially
+    coverImg.style.display = "block";
+    coverFallback.style.display = "none";
+
+    coverImg.src = url;
+    coverImg.onerror = () => {
+      // try default before showing the ♪ fallback
+      if (coverImg.src.includes("default.png")) {
+        coverImg.style.display = "none";
+        coverFallback.style.display = "flex";
+      } else {
+        coverImg.src = DEFAULT;
+      }
+    };
+  }
+
+  // ---- track loader ----
   function loadTrack(index) {
     if (PLAYLIST.length === 0) {
-      trackNameEl.textContent = "belum ada lagu — isi js/player.js";
+      trackEl.textContent = "NO TRACKS — ADD TO PLAYLIST";
+      loadCover(null);
+      applyMarquee();
       return;
     }
-    currentIndex = (index + PLAYLIST.length) % PLAYLIST.length;
+
+    currentIndex = ((index % PLAYLIST.length) + PLAYLIST.length) % PLAYLIST.length;
     const track = PLAYLIST[currentIndex];
-    audio.src = track.src;
-    trackNameEl.textContent = track.title;
+
+    audio.src   = track.src;
+    trackEl.textContent = track.title;
     progressFill.style.width = "0%";
+
+    loadCover(track.cover);
+    applyMarquee();
   }
 
   function playCurrent() {
@@ -46,14 +130,11 @@ const PLAYLIST = [
     btnPlay.textContent = "▶";
   }
 
+  // ---- controls ----
   btnPlay.addEventListener("click", () => {
     if (PLAYLIST.length === 0) return;
-    if (!audio.src) loadTrack(0);
-    if (audio.paused) {
-      playCurrent();
-    } else {
-      pauseCurrent();
-    }
+    if (!audio.src || audio.src === window.location.href) loadTrack(0);
+    audio.paused ? playCurrent() : pauseCurrent();
   });
 
   btnNext.addEventListener("click", () => {
@@ -66,7 +147,12 @@ const PLAYLIST = [
   btnPrev.addEventListener("click", () => {
     if (PLAYLIST.length === 0) return;
     const wasPlaying = !audio.paused;
-    loadTrack(currentIndex - 1);
+    // restart track if past 3s, otherwise go to prev
+    if (audio.currentTime > 3) {
+      audio.currentTime = 0;
+    } else {
+      loadTrack(currentIndex - 1);
+    }
     if (wasPlaying) playCurrent();
   });
 
@@ -80,6 +166,9 @@ const PLAYLIST = [
     playCurrent();
   });
 
-  // initialise with the first track (without autoplaying)
+  // re-measure marquee if window resizes
+  window.addEventListener("resize", applyMarquee);
+
+  // init — load first track without autoplaying
   loadTrack(0);
 })();

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abthal Akbar — Software Engineer</title>
+<title>abthal.dev</title>
 <meta name="description" content="Portofolio Abthal Akbar, Software Engineer.">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,38 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- mobile navbar — hidden on desktop -->
+<nav class="mobile-nav" aria-label="Navigasi mobile">
+  <div class="mobile-nav-inner">
+    <span class="mobile-nav-brand">abthal.dev</span>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Buka menu" aria-expanded="false" type="button">
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+    </button>
+  </div>
+  <!-- dropdown panel -->
+  <div class="mobile-nav-dropdown" id="mobileNavDropdown" aria-hidden="true">
+    <p class="mobile-nav-category">✦ main</p>
+    <button class="mobile-tab-btn" data-tab="about" type="button">about me</button>
+    <button class="mobile-tab-btn" data-tab="skills" type="button">skills</button>
+    <button class="mobile-tab-btn" data-tab="experience" type="button">experience</button>
+    <button class="mobile-tab-btn" data-tab="projects" type="button">project</button>
+    <button class="mobile-tab-btn" data-tab="achievements" type="button">achievements</button>
+    <div class="mobile-nav-divider"></div>
+    <p class="mobile-nav-category">✦ fun</p>
+    <button class="mobile-tab-btn" data-tab="gamesvault" type="button">gamesvault</button>
+    <button class="mobile-tab-btn" data-tab="minesweeper" type="button">minesweeper</button>
+    <button class="mobile-tab-btn" data-tab="paintboard" type="button">paintboard</button>
+    <button class="mobile-tab-btn" data-tab="windows7" type="button">windows 7</button>
+    <button class="mobile-tab-btn" data-tab="pointerpointer" type="button">pointerpointer</button>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-status">
+      <span class="status-dot"></span> open for work
+    </div>
+  </div>
+</nav>
 
 <div class="layout">
 
@@ -31,24 +63,27 @@
     <button class="tab-btn" data-tab="projects" type="button">
       <span class="tab-icon">◈</span> project
     </button>
-    <button class="tab-btn" data-tab="competition" type="button">
-      <span class="tab-icon">◈</span> competition
-    </button>
-    <button class="tab-btn" data-tab="certification" type="button">
-      <span class="tab-icon">◈</span> certification
+    <button class="tab-btn" data-tab="achievements" type="button">
+      <span class="tab-icon">◈</span> achievements
     </button>
 
     <div class="tabnav-divider"></div>
 
     <p class="tabnav-category">✦ fun</p>
-    <button class="tab-btn" data-tab="collections" type="button">
-      <span class="tab-icon">◈</span> GamesVault
+    <button class="tab-btn" data-tab="gamesvault" type="button">
+      <span class="tab-icon">◈</span> gamesvault
     </button>
     <button class="tab-btn" data-tab="minesweeper" type="button">
       <span class="tab-icon">◈</span> minesweeper
     </button>
     <button class="tab-btn" data-tab="paintboard" type="button">
       <span class="tab-icon">◈</span> paintboard
+    </button>
+    <button class="tab-btn" data-tab="windows7" type="button">
+      <span class="tab-icon">◈</span> windows 7
+    </button>
+    <button class="tab-btn" data-tab="pointerpointer" type="button">
+      <span class="tab-icon">◈</span> pointerpointer
     </button>
 
     <div class="tabnav-divider"></div>
@@ -65,29 +100,77 @@
     <section id="about" class="tab-section is-active">
       <h2 class="section-title">about me</h2>
 
-      <!-- profile card (pengganti hero) -->
+      <!-- profile card -->
       <div class="glass-card profile-card">
-        <div class="profile-badge">
-          <img src="assets/img/avatar-placeholder.svg" alt="Foto profil" class="avatar">
+        <div class="profile-badge-wrap">
+          <div class="profile-badge">
+            <img src="assets/img/avatar-placeholder.svg" alt="Foto profil" class="avatar">
+          </div>
         </div>
         <div class="profile-text">
-          <p class="profile-eyebrow">// halo, dunia</p>
+          <div class="profile-meta-row">
+            <span class="profile-logo" aria-hidden="true">
+              <!-- generic monogram logo -->
+                <defs>
+                  <linearGradient id="lg" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2ee8c0"/>
+                    <stop offset="100%" stop-color="#1168a8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <span class="profile-location">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="6" cy="4.5" r="1.2" fill="currentColor"/></svg>
+              Jakarta Metropolitan Area
+            </span>
+          </div>
           <h1>Abthal Akbar</h1>
-          <p class="profile-role">Software Engineer &middot; Web &amp; Backend</p>
-          <p class="profile-tagline">Placeholder tagline — ganti dengan satu-dua kalimat tentang apa yang kamu bangun dan apa yang kamu suka dari engineering.</p>
+          <p class="profile-role">Software Developer | DevOps Engineer</p>
+          <p class="profile-tagline">Informatics Undergraduate at Universitas Multimedia Nusantara who loves machine learning and making websites.</p>
         </div>
       </div>
 
       <div class="glass-card about-card">
-        <p>
+        <p class="about-bio">
           Placeholder bio — tulis 3–5 kalimat tentang siapa kamu, latar belakang, dan
           jenis masalah yang paling kamu suka pecahkan sebagai software engineer.
           Ganti teks ini di <code>index.html</code> pada bagian <code>#about</code>.
         </p>
-        <p>
-          Kamu juga bisa cerita hobi atau minat di luar coding di sini — bagian ini
-          yang bikin portofolio kamu terasa personal, bukan cuma daftar teknis.
-        </p>
+
+        <!-- collage grid di dalam bio card -->
+        <div class="collage-grid">
+          <div class="collage-cell collage-cell--tall collage-img-cell">
+            <img src="assets/img/collage/c1.jpg" alt="" loading="lazy">
+            <span class="collage-emoji">🌿</span>
+          </div>
+          <div class="collage-cell collage-bio-cell">
+            <p class="collage-bio-text">"i build things<br>for the web<br>&amp; beyond ✦"</p>
+          </div>
+          <div class="collage-cell collage-img-cell">
+            <img src="assets/img/collage/c2.jpg" alt="" loading="lazy">
+            <span class="collage-emoji">📸</span>
+          </div>
+          <div class="collage-cell collage-img-cell">
+            <img src="assets/img/collage/c3.jpg" alt="" loading="lazy">
+            <span class="collage-emoji">🎮</span>
+          </div>
+          <div class="collage-cell collage-cell--wide collage-emoji-card">
+            <span class="collage-big-emoji">☕</span>
+            <span class="collage-emoji-label">coffee &amp; code</span>
+          </div>
+          <div class="collage-cell collage-emoji-card">
+            <span class="collage-big-emoji">🎵</span>
+            <span class="collage-emoji-label">music nerd</span>
+          </div>
+          <div class="collage-cell collage-img-cell">
+            <img src="assets/img/collage/c4.jpg" alt="" loading="lazy">
+            <span class="collage-emoji">🌙</span>
+          </div>
+          <div class="collage-cell collage-img-cell">
+            <img src="assets/img/collage/c5.jpg" alt="" loading="lazy">
+            <span class="collage-emoji">🚀</span>
+          </div>
+        </div>
       </div>
 
       <div class="glass-card contact-card">
@@ -231,9 +314,12 @@
       </div>
     </section>
 
-    <section id="competition" class="tab-section">
-      <h2 class="section-title">competition</h2>
+    <section id="achievements" class="tab-section">
+      <h2 class="section-title">achievements</h2>
+
+      <!-- competition -->
       <div class="glass-card">
+        <h3 class="card-subtitle">competition</h3>
         <ul class="award-list">
           <li>
             <span class="award-medal">🥇</span>
@@ -258,11 +344,10 @@
           </li>
         </ul>
       </div>
-    </section>
 
-    <section id="certification" class="tab-section">
-      <h2 class="section-title">certification</h2>
+      <!-- certification -->
       <div class="glass-card">
+        <h3 class="card-subtitle">certification</h3>
         <ul class="cert-list">
           <li>
             <div>
@@ -282,16 +367,59 @@
       </div>
     </section>
 
-    <section id="collections" class="tab-section">
-      <h2 class="section-title">collections</h2>
-      <div class="gallery-grid">
-        <!-- tambah gambar di sini: <img src="assets/img/..." alt="..."> -->
-        <div class="gallery-placeholder">+ tambah gambar</div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
+    <section id="gamesvault" class="tab-section">
+      <h2 class="section-title">gamesvault</h2>
+
+      <!-- bio + buttons -->
+      <div class="glass-card gamesvault-bio">
+        <div class="gamesvault-bio-inner">
+          <div class="gamesvault-avatar-wrap">
+            <img src="assets/img/avatar-placeholder.svg" alt="" class="gamesvault-avatar">
+          </div>
+          <div class="gamesvault-bio-text">
+            <p class="gamesvault-handle">@abthal</p>
+            <p class="gamesvault-desc">gamer by night, developer by day. mostly rpg, city builders &amp; indie gems ✨</p>
+            <div class="gamesvault-btns">
+              <a href="#" target="_blank" rel="noopener" class="gv-btn gv-btn--web">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 1.5C7 1.5 5 4 5 7s2 5.5 2 5.5M7 1.5C7 1.5 9 4 9 7s-2 5.5-2 5.5M1.5 7h11" stroke="currentColor" stroke-width="1.3"/></svg>
+                website
+              </a>
+              <a href="https://instagram.com/username" target="_blank" rel="noopener" class="gv-btn gv-btn--ig">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="11" height="11" rx="3" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="10.2" cy="3.8" r="0.7" fill="currentColor"/></svg>
+                instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- collage gallery -->
+      <div class="gv-collage">
+        <div class="gv-collage-cell gv-collage-cell--wide glass-card gv-img-cell">
+          <img src="assets/img/gamesvault/g1.jpg" alt="" loading="lazy">
+          <span class="gv-label">currently playing</span>
+        </div>
+        <div class="gv-collage-cell glass-card gv-emoji-cell">
+          <span class="gv-big-emoji">🎮</span>
+        </div>
+        <div class="gv-collage-cell glass-card gv-img-cell">
+          <img src="assets/img/gamesvault/g2.jpg" alt="" loading="lazy">
+        </div>
+        <div class="gv-collage-cell glass-card gv-img-cell">
+          <img src="assets/img/gamesvault/g3.jpg" alt="" loading="lazy">
+        </div>
+        <div class="gv-collage-cell glass-card gv-quote-cell">
+          <p>"git commit -m 'one more round'"</p>
+        </div>
+        <div class="gv-collage-cell glass-card gv-img-cell">
+          <img src="assets/img/gamesvault/g4.jpg" alt="" loading="lazy">
+        </div>
+        <div class="gv-collage-cell glass-card gv-emoji-cell">
+          <span class="gv-big-emoji">🏆</span>
+        </div>
+        <div class="gv-collage-cell glass-card gv-img-cell">
+          <img src="assets/img/gamesvault/g5.jpg" alt="" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -312,6 +440,48 @@
         <div class="iframe-blocked" id="minesweeperBlocked" style="display:none">
           <p>⚠️ minesweeper.online memblokir embed.</p>
           <a href="https://minesweeper.online/" target="_blank" rel="noopener" class="iframe-open-btn">buka di tab baru ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="windows7" class="tab-section">
+      <h2 class="section-title">windows 7</h2>
+      <div class="iframe-wrap iframe-wrap--tall">
+        <iframe
+          src="https://nainemom.github.io/win7/"
+          title="Windows 7 Simulation"
+          allowfullscreen
+          loading="lazy"
+        >
+          <p class="iframe-fallback">
+            Browser kamu tidak support iframe.
+            <a href="https://nainemom.github.io/win7/" target="_blank" rel="noopener">Buka di tab baru ↗</a>
+          </p>
+        </iframe>
+        <div class="iframe-blocked" id="windows7Blocked" style="display:none">
+          <p>⚠️ Site ini memblokir embed.</p>
+          <a href="https://nainemom.github.io/win7/" target="_blank" rel="noopener" class="iframe-open-btn">buka di tab baru ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pointerpointer" class="tab-section">
+      <h2 class="section-title">pointerpointer</h2>
+      <div class="iframe-wrap">
+        <iframe
+          src="https://pointerpointer.com/"
+          title="Pointer Pointer"
+          allowfullscreen
+          loading="lazy"
+        >
+          <p class="iframe-fallback">
+            Browser kamu tidak support iframe.
+            <a href="https://pointerpointer.com/" target="_blank" rel="noopener">Buka di tab baru ↗</a>
+          </p>
+        </iframe>
+        <div class="iframe-blocked" id="pointerpointerBlocked" style="display:none">
+          <p>⚠️ Site ini memblokir embed.</p>
+          <a href="https://pointerpointer.com/" target="_blank" rel="noopener" class="iframe-open-btn">buka di tab baru ↗</a>
         </div>
       </div>
     </section>
@@ -389,25 +559,124 @@
       </div>
     </section>
 
+    <!-- web deck — docked below panel -->
+    <div class="deck-dock">
+      <div class="player-deck">
+        <div class="player-deck-label">WEB DECK</div>
+        <div class="player-deck-inner">
+          <!-- cover art -->
+          <div class="player-cover-wrap">
+            <img id="playerCover" src="assets/music/covers/default.png" alt="Album cover" class="player-cover" onerror="this.src='';this.style.display='none';document.getElementById('playerCoverFallback').style.display='flex'">
+            <div class="player-cover-fallback" id="playerCoverFallback">♪</div>
+          </div>
+          <!-- info + controls -->
+          <div class="player-info">
+            <div class="player-marquee-wrap">
+              <p class="player-track" id="playerTrackName">NO TRACK LOADED</p>
+            </div>
+            <div class="player-progress">
+              <div class="player-progress-fill" id="playerProgressFill"></div>
+            </div>
+            <audio id="audioEl" preload="metadata"></audio>
+            <div class="player-controls">
+              <button type="button" id="btnPrev" aria-label="Lagu sebelumnya">⏮</button>
+              <button type="button" id="btnPlay" aria-label="Putar/jeda">▶</button>
+              <button type="button" id="btnNext" aria-label="Lagu berikutnya">⏭</button>
+            </div>
+          </div>
+        </div>
+        <p class="player-hint">cover: <code>assets/music/covers/namafile.png</code></p>
+      </div>
+    </div>
+
   </main>
 
   <!-- RIGHT: widgets -->
   <aside class="widgets" aria-label="Widget">
 
-    <div class="glass-card widget-card">
-      <div class="player-deck">
-        <div class="player-deck-label">WEB DECK</div>
-        <p class="player-track" id="playerTrackName">NO TRACK LOADED</p>
-        <div class="player-progress">
-          <div class="player-progress-fill" id="playerProgressFill"></div>
+    <!-- calendar widget -->
+    <div class="glass-card widget-card calendar-widget">
+      <div class="cal-header">
+        <button class="cal-nav" id="calPrev" aria-label="Bulan sebelumnya">‹</button>
+        <div class="cal-month-year">
+          <span id="calMonthName"></span>
+          <span id="calYear"></span>
         </div>
-        <audio id="audioEl" preload="metadata"></audio>
-        <div class="player-controls">
-          <button type="button" id="btnPrev" aria-label="Lagu sebelumnya">⏮</button>
-          <button type="button" id="btnPlay" aria-label="Putar/jeda">▶</button>
-          <button type="button" id="btnNext" aria-label="Lagu berikutnya">⏭</button>
+        <button class="cal-nav" id="calNext" aria-label="Bulan berikutnya">›</button>
+      </div>
+      <div class="cal-grid">
+        <span class="cal-day-label">Su</span>
+        <span class="cal-day-label">Mo</span>
+        <span class="cal-day-label">Tu</span>
+        <span class="cal-day-label">We</span>
+        <span class="cal-day-label">Th</span>
+        <span class="cal-day-label">Fr</span>
+        <span class="cal-day-label">Sa</span>
+        <div id="calDays" class="cal-days-inner"></div>
+      </div>
+    </div>
+
+    <!-- notes widget — MS Paint notepad style, edit teks di HTML -->
+    <div class="notes-widget">
+      <!-- title bar -->
+      <div class="notes-titlebar">
+        <span class="notes-appicon">📝</span>
+        <span class="notes-title">update.txt</span>
+        <div class="notes-wbtns">
+          <span class="notes-wbtn">_</span>
+          <span class="notes-wbtn">□</span>
+          <span class="notes-wbtn notes-wbtn--x">✕</span>
         </div>
-        <p class="player-hint">taruh file mp3 di <code>assets/music/</code></p>
+      </div>
+      <!-- menubar -->
+      <div class="notes-menubar">
+        <span class="notes-menu-item">File</span>
+        <span class="notes-menu-item">Edit</span>
+        <span class="notes-menu-item">Format</span>
+        <span class="notes-menu-item">Help</span>
+      </div>
+      <!-- content — edit teks di sini -->
+      <div class="notes-body">
+        <pre class="notes-text">
+=== update log ===
+
+[2026-09-11]
+- portofolio baru live!
+
+[soon]
+- otw apple academy
+- ???
+
+stay tuned ✦
+        </pre>
+      </div>
+      <!-- statusbar -->
+      <div class="notes-statusbar">
+        <span>Ln 1, Col 1</span>
+        <span>100%</span>
+        <span>UTF-8</span>
+      </div>
+    </div>
+
+    <!-- slideshow widget -->
+    <div class="glass-card widget-card slideshow-widget">
+      <div class="slideshow-wrap">
+        <div class="slideshow-track" id="slideshowTrack">
+          <!-- tambah gambar di sini -->
+          <div class="slide slide--placeholder">
+            <span>📷</span>
+            <small>assets/img/slideshow/s1.jpg</small>
+          </div>
+          <div class="slide slide--placeholder">
+            <span>📷</span>
+            <small>assets/img/slideshow/s2.jpg</small>
+          </div>
+          <div class="slide slide--placeholder">
+            <span>📷</span>
+            <small>assets/img/slideshow/s3.jpg</small>
+          </div>
+        </div>
+        <div class="slideshow-dots" id="slideshowDots"></div>
       </div>
     </div>
 

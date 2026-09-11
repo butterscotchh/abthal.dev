@@ -51,3 +51,9 @@ Selain section portofolio, website juga memiliki:
 - HTML
 - CSS
 - JavaScript
+
+## Reference
+
+- [text](https://frutigeraeroarchive.org/)
+- [text](https://www.softicons.com/)
+- [text](https://www.softicons.com/system-icons/crystal-clear-icons-by-everaldo-coelho)

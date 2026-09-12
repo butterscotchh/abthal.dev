@@ -1447,7 +1447,7 @@ code {
 .cal-day--today.cal-day--weekend { color: var(--sky-4); }
 
 /* =========================================================
-   PROFILE CARD — logo, lokasi, Win7 border, idle float
+   PROFILE CARD
    ========================================================= */
 
 /* wrap provides the Win7-style bevel frame */
@@ -1494,14 +1494,7 @@ code {
   margin-bottom: 6px;
   flex-wrap: wrap;
 }
-.profile-logo {
-  display: flex;
-  align-items: center;
-}
-.profile-logo svg {
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(14,43,64,0.18);
-}
+
 .profile-location {
   display: flex;
   align-items: center;
@@ -1509,6 +1502,45 @@ code {
   font-size: 0.80rem;
   font-weight: 700;
   color: var(--ink-soft);
+}
+
+/* =========================================================
+   PROFILE — MOBILE (≤560px)
+   ========================================================= */
+@media (max-width: 560px) {
+  .profile-card {
+    display: grid;
+    grid-template-columns: 1fr auto;   /* teks | foto */
+    grid-template-areas:
+      "text  photo"
+      "tag   tag";
+    gap: 10px 12px;
+    align-items: start;
+    padding: 16px;
+  }
+
+  .profile-text {
+    grid-area: text;
+    min-width: 0;
+  }
+
+  .profile-badge-wrap {
+    grid-area: photo;
+    align-self: start;
+  }
+
+  .profile-badge {
+    width: 80px;
+    height: 80px;
+    animation: none;
+  }
+
+  .profile-tagline {
+    grid-area: tag;
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
 }
 
 /* =========================================================
@@ -1595,31 +1627,38 @@ code {
   color: var(--ink-mid);
   text-align: center;
 }
-
 /* =========================================================
    ABOUT GRID — MOBILE (≤560px)
    ========================================================= */
 @media (max-width: 560px) {
+
+  /* 2 kolom, tinggi baris lebih kecil */
   .about-grid {
-    grid-auto-rows: minmax(80px, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
     gap: 4px;
   }
 
-  /* tall → normal */
+  /* tall tetap span 2 baris biar ada variasi */
   .about-cell--tall {
-    grid-row: span 1;
+    grid-row: span 2;
   }
 
-  /* teks: mulai dari atas + auto-height */
+  /* wide — tetap span 2 kolom (full width) */
+  .about-cell--wide {
+    grid-column: span 2;
+  }
+
+  /* teks: padding kecil, font lebih kecil, tapi tetap center */
   .about-cell--text {
-    align-items: flex-start;
+    align-items: center;
     padding: 8px 10px;
   }
 
   .about-cell--text p {
     font-size: 0.68rem;
     line-height: 1.4;
-    text-align: left;
+    text-align: center;
   }
 }
 

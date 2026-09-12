@@ -11,16 +11,15 @@
 // ============================================================
 const PLAYLIST = [
   {
-    title: "Recover Decoration (Remix) — Kana Hanazawa",
-    src:   "assets/music/Kana Hanazawa - Recover Decoration (Remix).mp3",
-    cover: "assets/music/covers/1.jpg",
-  },
-  {
     title: "Wii Party Soundtrack - Main Menu",
     src:   "assets/music/Wii Party Soundtrack - Main Menu Music.mp3",
     cover: "assets/music/covers/2.png",
   },
-  // { title: "Song Title — Artist", src: "assets/music/file.mp3", cover: "assets/music/covers/file.png" },
+  {
+    title: "Recover Decoration (Remix) — Kana Hanazawa",
+    src:   "assets/music/Kana Hanazawa - Recover Decoration (Remix).mp3",
+    cover: "assets/music/covers/1.jpg",
+  },
 ];
 
 (function () {
@@ -119,15 +118,18 @@ const PLAYLIST = [
     applyMarquee();
   }
 
+  const SVG_PLAY  = `<svg id="iconPlay" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5.5 3.5 14.5 9l-9 5.5V3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor"/></svg>`;
+  const SVG_PAUSE = `<svg id="iconPlay" width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="4.5" y="3.5" width="3" height="11" rx="1" fill="currentColor"/><rect x="10.5" y="3.5" width="3" height="11" rx="1" fill="currentColor"/></svg>`;
+
   function playCurrent() {
     if (PLAYLIST.length === 0) return;
     audio.play();
-    btnPlay.textContent = "⏸";
+    btnPlay.innerHTML = SVG_PAUSE;
   }
 
   function pauseCurrent() {
     audio.pause();
-    btnPlay.textContent = "▶";
+    btnPlay.innerHTML = SVG_PLAY;
   }
 
   // ---- controls ----

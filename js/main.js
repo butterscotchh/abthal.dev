@@ -303,3 +303,24 @@
 
   render();
 })();
+// ============================================================
+// about-grid slideshow — auto rotate
+// ============================================================
+(function () {
+  const slideshows = document.querySelectorAll(".about-cell--slideshow");
+  if (!slideshows.length) return;
+
+  slideshows.forEach((box) => {
+    const slides = Array.from(box.querySelectorAll(".slide"));
+    if (slides.length <= 1) return;
+
+    const interval = parseInt(box.dataset.interval, 10) || 3000;
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove("is-active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("is-active");
+    }, interval);
+  });
+})();

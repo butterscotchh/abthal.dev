@@ -1,8 +1,3 @@
-/* =========================================================
-   Abthal Akbar — Portfolio
-   Frutiger Aero design system v2
-   ========================================================= */
-
 :root {
   /* -- core palette -- */
   --sky-0:      #f0faff;
@@ -36,7 +31,7 @@
   --font-display: "Baloo 2", "Trebuchet MS", sans-serif;
   --font-body:    "Manrope", "Segoe UI", sans-serif;
 
-  /* -- radii — squircle, agak kotak tapi tidak tajam -- */
+  /* -- radii — squircle -- */
   --r-xl: 16px;
   --r-lg: 10px;
   --r-md:  7px;
@@ -64,15 +59,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: var(--sky-0); /* fallback kalau gambar gagal load */
+  background-color: var(--sky-0);
 }
 
-/* lapisan overlay tipis biar teks tetap kebaca di atas background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.25); /* atur 0.1 – 0.5 sesuai selera */
+  background: rgba(255, 255, 255, 0.25);
   pointer-events: none;
   z-index: 0;
 }
@@ -103,7 +97,7 @@ code {
 }
 
 /* =========================================================
-   LEFT — TAB NAV  (glossy pill sidebar)
+   LEFT — TAB NAV  
    ========================================================= */
 .tabnav {
   position: sticky;
@@ -144,7 +138,6 @@ code {
     transparent);
 }
 
-/* glossy pill buttons */
 .tab-btn {
   display: flex;
   align-items: center;
@@ -169,6 +162,12 @@ code {
     0 2px 8px rgba(14,43,64,0.08);
   transition: transform .12s ease, box-shadow .12s ease, color .12s ease;
 }
+.tab-btn .tab-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
 .tab-btn .tab-icon {
   display: flex;
   align-items: center;
@@ -188,7 +187,7 @@ code {
     0 5px 16px rgba(14,43,64,0.13);
 }
 
-/* active — slate-blue tint, lebih jelas dari sebelumnya */
+/* active — slate-blue tint */
 .tab-btn.is-active {
   color: var(--sky-4);
   background:
@@ -247,7 +246,7 @@ code {
     0 1px 3px rgba(14,43,64,0.10);
 }
 
-/* mobile dropdown version — sama gayanya, full width */
+/* mobile dropdown full width */
 .mobile-cv-btn {
   display: flex;
   align-items: center;
@@ -336,7 +335,7 @@ code {
 }
 
 /* =========================================================
-   PROFILE CARD (base layout — detail di bawah)
+   PROFILE CARD
    ========================================================= */
 .profile-card {
   display: flex;
@@ -368,7 +367,7 @@ code {
 }
 
 /* =========================================================
-   GLASS CARDS — base, polos
+   GLASS CARDS
    ========================================================= */
 .glass-card {
   position: relative;
@@ -387,7 +386,6 @@ code {
   overflow: hidden;
 }
 
-/* sheen dasar — tetap ada di semua card */
 .glass-card::before {
   content: "";
   position: absolute;
@@ -400,7 +398,6 @@ code {
   z-index: 0;
 }
 
-/* semua isi glass-card naik ke atas sheen */
 .glass-card > * {
   position: relative;
   z-index: 1;
@@ -433,7 +430,6 @@ code {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* lapisan glow + kilau — khusus project-card */
 .project-card::before {
   content: "";
   position: absolute;
@@ -454,7 +450,6 @@ code {
   transform: translateX(6%) translateY(-4%);
 }
 
-/* kilau diagonal — lewat sekali saat hover */
 .project-card::after {
   content: "";
   position: absolute;
@@ -478,7 +473,7 @@ code {
 }
 
 /* =========================================================
-   CONTACT — icon row horizontal, besar & balanced
+   CONTACT
    ========================================================= */
 .contact-row {
   display: flex;
@@ -532,7 +527,6 @@ code {
   pointer-events: none;
 }
 
-/* tablet: sedikit lebih kecil */
 @media (max-width: 860px) {
   .contact-btn {
     width: 52px;
@@ -544,7 +538,6 @@ code {
   }
 }
 
-/* phone: lebih kecil lagi + center */
 @media (max-width: 560px) {
   .contact-row {
     justify-content: center;
@@ -609,7 +602,6 @@ code {
   flex-shrink: 0;
 }
 
-/* ikon PNG goyang dikit saat hover */
 .chip:hover .chip-img {
   animation: chip-wiggle .4s ease;
 }
@@ -687,7 +679,7 @@ code {
 
 .award-thumb {
   flex-shrink: 0;
-  width: 96px;                 /* persegi panjang 4:3 */
+  width: 96px;                 
   aspect-ratio: 4 / 3;
   border-radius: var(--r-sm);
   overflow: hidden;
@@ -710,7 +702,7 @@ code {
 .award-meta  { margin: 2px 0 0; font-size: 0.82rem; color: var(--ink-soft); }
 
 /* =========================================================
-   ACHIEVEMENTS — thumbnail di kanan
+   ACHIEVEMENTS
    ========================================================= */
 .award-list--thumb-right li {
   justify-content: space-between;
@@ -738,24 +730,21 @@ code {
   background: #1a1a2e;
 }
 
-/* default: 16/9 aspect ratio — scales cleanly on all screen sizes */
 .iframe-wrap iframe {
   display: block;
   width: 100%;
-  height: 60vw;       /* scales with viewport width */
-  max-height: 680px;  /* cap on desktop */
-  min-height: 360px;  /* floor on small screens */
+  height: 60vw;       
+  max-height: 680px;  
+  min-height: 360px;  
   border: none;
 }
 
-/* tall variant (windows 7 sim needs more vertical room) */
 .iframe-wrap--tall iframe {
   height: 75vw;
   max-height: 800px;
   min-height: 420px;
 }
 
-/* on mobile: allow touch scrolling inside the iframe viewport */
 @media (max-width: 860px) {
   .iframe-wrap {
     overflow: auto;
@@ -866,10 +855,9 @@ code {
 }
 
 /* =========================================================
-   PAINTBOARD — MS Paint / Win98 window style
+   PAINTBOARD — MS Paint
    ========================================================= */
 
-/* Win98 bevel mixins as custom props */
 :root {
   --w98-raised: inset -1px -1px 0 #000, inset 1px 1px 0 #fff,
                 inset -2px -2px 0 #808080, inset 2px 2px 0 #dfdfdf;
@@ -880,7 +868,6 @@ code {
   --w98-font:   "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
 }
 
-/* outer window frame */
 .mspaint-window {
   background: var(--w98-bg);
   box-shadow: var(--w98-raised), 0 4px 20px rgba(0,0,0,0.35);
@@ -891,7 +878,6 @@ code {
   user-select: none;
 }
 
-/* ---- title bar ---- */
 .mspaint-titlebar {
   background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
   display: flex;
@@ -934,7 +920,6 @@ code {
 .mspaint-wbtn:active { box-shadow: var(--w98-sunken); }
 .mspaint-wbtn--close { font-size: 10px; }
 
-/* ---- menu bar ---- */
 .mspaint-menubar {
   display: flex;
   gap: 0;
@@ -953,14 +938,12 @@ code {
   color: #fff;
 }
 
-/* ---- body (toolbar + canvas) ---- */
 .mspaint-body {
   display: flex;
   flex: 1;
   overflow: hidden;
 }
 
-/* ---- left toolbar ---- */
 .mspaint-toolbar {
   width: 36px;
   background: var(--w98-bg);
@@ -1045,6 +1028,8 @@ code {
   touch-action: none;
   max-width: 100%;
   height: auto;
+
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><circle cx='10' cy='10' r='4' fill='%2309b898'/></svg>") 10 10, crosshair;
 }
 
 /* ---- color palette bar ---- */
@@ -1142,14 +1127,14 @@ code {
 .widget-card { padding: 0; overflow: hidden; }
 
 /* =========================================================
-   DECK DOCK  — full-width below panel center
+   DECK DOCK  
    ========================================================= */
 .deck-dock {
   margin-top: 10px;
 }
 
 /* =========================================================
-   RETRO WEB DECK PLAYER  (cover + marquee edition)
+   RETRO WEB DECK PLAYER 
    ========================================================= */
 .player-deck {
   background:
@@ -1353,7 +1338,7 @@ code {
 }
 
 /* =========================================================
-   CALENDAR WIDGET — Frutiger Aero
+   CALENDAR WIDGET
    ========================================================= */
 .calendar-widget { padding: 16px; }
 
@@ -1458,14 +1443,13 @@ code {
 
 .profile-badge {
   width: 120px; height: 120px;
-  /* Win7 thumbnail frame: outer dark border, inner highlight, raised bevel */
   border: 2px solid rgba(14,43,64,0.35);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.80),          /* inner white ring */
-    0 0 0 3px rgba(45,100,160,0.22),            /* mid blue ring */
-    0 0 0 4px rgba(255,255,255,0.55),           /* outer white */
+    0 0 0 1px rgba(255,255,255,0.80),          
+    0 0 0 3px rgba(45,100,160,0.22),           
+    0 0 0 4px rgba(255,255,255,0.55),           
     var(--shadow-md);
-  border-radius: var(--r-sm);                   /* kotak, sedikit rounded */
+  border-radius: var(--r-sm);                   
   overflow: hidden;
   background: var(--chrome);
   animation: idle-float 4s ease-in-out infinite;
@@ -1483,10 +1467,9 @@ code {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0; /* kotak sesuai badge */
+  border-radius: 0; 
 }
 
-/* meta row: logo + location */
 .profile-meta-row {
   display: flex;
   align-items: center;
@@ -1505,12 +1488,12 @@ code {
 }
 
 /* =========================================================
-   PROFILE — MOBILE (≤560px)
+   PROFILE — MOBILE
    ========================================================= */
 @media (max-width: 560px) {
   .profile-card {
     display: grid;
-    grid-template-columns: 1fr auto;   /* teks | foto */
+    grid-template-columns: 1fr auto;  
     grid-template-areas:
       "text  photo"
       "tag   tag";
@@ -1579,7 +1562,6 @@ code {
 .about-cell--tall { grid-row: span 2; }
 .about-cell--wide { grid-column: span 2; }
 
-/* img — tanpa hover, cuma nampilin gambar */
 .about-cell--img {
   display: flex;
   align-items: center;
@@ -1628,28 +1610,24 @@ code {
   text-align: center;
 }
 /* =========================================================
-   ABOUT GRID — MOBILE (≤560px)
+   ABOUT GRID — MOBILE
    ========================================================= */
 @media (max-width: 560px) {
 
-  /* 2 kolom, tinggi baris lebih kecil */
   .about-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 100px;
     gap: 4px;
   }
 
-  /* tall tetap span 2 baris biar ada variasi */
   .about-cell--tall {
     grid-row: span 2;
   }
 
-  /* wide — tetap span 2 kolom (full width) */
   .about-cell--wide {
     grid-column: span 2;
   }
 
-  /* teks: padding kecil, font lebih kecil, tapi tetap center */
   .about-cell--text {
     align-items: center;
     padding: 8px 10px;
@@ -1704,7 +1682,6 @@ code {
 }
 .gv-btn:hover { transform: translateY(-1px); }
 
-/* website — glossy biru-putih */
 .gv-btn--web {
   color: var(--sky-4);
   background:
@@ -1716,7 +1693,6 @@ code {
 }
 .gv-btn--web:hover { color: var(--sky-4); }
 
-/* button dengan PNG logo */
 .gv-btn--img {
   color: var(--ink-mid);
   background:
@@ -1737,7 +1713,7 @@ code {
 }
 
 /* =========================================================
-   ALBUM GRID — foto console (static, tanpa hover)
+   ALBUM GRID
    ========================================================= */
 .gv-album {
   display: grid;
@@ -1763,7 +1739,7 @@ code {
 }
 
 /* =========================================================
-   NOTES WIDGET — Win98 Notepad style
+   NOTES WIDGET
    ========================================================= */
 .notes-widget {
   font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
@@ -1852,12 +1828,11 @@ code {
 }
 
 /* =========================================================
-   SLIDESHOW WIDGET — no buttons, auto-scroll, crystal border
+   SLIDESHOW WIDGET
    ========================================================= */
 .slideshow-widget {
   padding: 0;
   overflow: hidden;
-  /* crystal glass frame */
   border: 1.5px solid rgba(255,255,255,0.75) !important;
   box-shadow:
     0 0 0 1px rgba(45,120,200,0.12),
@@ -1908,7 +1883,6 @@ code {
   padding: 0 12px;
 }
 
-/* dots only — no buttons */
 .slideshow-dots {
   position: absolute;
   bottom: 8px; left: 0; right: 0;
@@ -1931,7 +1905,7 @@ code {
 }
 
 /* =========================================================
-   EXPERIENCE — foto dokumentasi
+   EXPERIENCE
    ========================================================= */
 .timeline-docs {
   display: grid;
@@ -2017,7 +1991,6 @@ code {
 }
 .project-btn:hover { transform: translateY(-1px); }
 
-/* demo / live demo — glossy biru-putih */
 .project-btn--demo {
   color: var(--sky-4);
   background:
@@ -2029,7 +2002,6 @@ code {
 }
 .project-btn--demo:hover { color: var(--sky-4); }
 
-/* github — glossy abu-putih */
 .project-btn--github {
   color: var(--ink-mid);
   background:
@@ -2041,7 +2013,6 @@ code {
 }
 .project-btn--github:hover { color: var(--ink); }
 
-/* play — glossy biru-putih, sama kayak demo */
 .project-btn--play {
   color: var(--sky-4);
   background:
@@ -2089,7 +2060,6 @@ code {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* glow + sheen — sama kayak project card */
 .cert-card::before {
   content: "";
   position: absolute;
@@ -2110,7 +2080,6 @@ code {
   transform: translateX(6%) translateY(-4%);
 }
 
-/* kilau diagonal lewat sekali saat hover */
 .cert-card::after {
   content: "";
   position: absolute;
@@ -2163,7 +2132,6 @@ code {
   font-size: 0.85rem;
 }
 
-/* tombol ikon link */
 .cert-link-btn {
   margin-top: 8px;
   align-self: flex-start;
@@ -2218,16 +2186,14 @@ code {
 }
 
 /* =========================================================
-   MOBILE NAVBAR  — crystal transparent, fixed top
-   hidden on desktop, shown ≤860px
+   MOBILE NAVBAR 
    ========================================================= */
 .mobile-nav {
-  display: none; /* hidden by default — shown via media query */
+  display: none; 
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
 
-  /* crystal glass effect */
   background: rgba(220,242,255,0.55);
   backdrop-filter: blur(20px) saturate(1.6);
   -webkit-backdrop-filter: blur(20px) saturate(1.6);
@@ -2254,7 +2220,6 @@ code {
   text-shadow: 0 1px 0 rgba(255,255,255,0.7);
 }
 
-/* hamburger toggle button */
 .mobile-nav-toggle {
   width: 38px; height: 38px;
   border: none; cursor: pointer;
@@ -2318,7 +2283,6 @@ code {
               opacity .25s ease;
   opacity: 0;
   padding: 0 14px;
-  /* same glass as navbar */
   border-top: 1px solid rgba(255,255,255,0.50);
 }
 .mobile-nav-dropdown.is-open {
@@ -2346,7 +2310,6 @@ code {
     transparent);
 }
 
-/* tab buttons inside dropdown */
 .mobile-tab-btn {
   display: block;
   width: 100%;
@@ -2397,7 +2360,7 @@ code {
 }
 
 /* =========================================================
-   CUSTOM SCROLLBAR — crystal transparent
+   CUSTOM SCROLLBAR
    ========================================================= */
 ::-webkit-scrollbar {
   width: 8px;
@@ -2424,7 +2387,6 @@ code {
 }
 ::-webkit-scrollbar-corner { background: transparent; }
 
-/* Firefox */
 * { scrollbar-width: thin; scrollbar-color: rgba(200,230,255,0.55) rgba(255,255,255,0.15); }
 
 /* =========================================================

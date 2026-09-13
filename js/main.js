@@ -1,5 +1,5 @@
 // ============================================================
-// main.js — tab navigation (hash-based, works on GitHub Pages)
+// tab navigation
 // ============================================================
 (function () {
   const tabButtons = document.querySelectorAll(".tab-btn");
@@ -110,7 +110,7 @@
 })();
 
 // ============================================================
-// mobile navbar — toggle dropdown + sync active state
+// mobile navbar
 // ============================================================
 (function () {
   const toggle   = document.getElementById("mobileNavToggle");
@@ -184,7 +184,7 @@
   }
 })();
 // ============================================================
-// slideshow widget — auto-scroll, no buttons
+// slideshow widget
 // ============================================================
 (function () {
   const track   = document.getElementById("slideshowTrack");
@@ -304,7 +304,7 @@
   render();
 })();
 // ============================================================
-// about-grid slideshow — auto rotate
+// about-grid slideshow
 // ============================================================
 (function () {
   const slideshows = document.querySelectorAll(".about-cell--slideshow");

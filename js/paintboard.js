@@ -1,5 +1,5 @@
 // ============================================================
-// paintboard.js — MS Paint-style drawing widget
+// MS Paint-style drawing widget
 // ============================================================
 (function () {
   const canvas        = document.getElementById("paintCanvas");
@@ -142,7 +142,7 @@
 
     if (currentTool === "eraser") {
       ctx.strokeStyle = bgColor;
-      ctx.lineWidth   = brushSize * 3; // eraser is chunkier
+      ctx.lineWidth   = brushSize * 3;
     } else {
       ctx.strokeStyle = fgColor;
     }

@@ -1,14 +1,3 @@
-// ============================================================
-// player.js — web deck player (cover art + marquee edition)
-//
-// HOW TO ADD SONGS:
-// 1. Put .mp3 files in assets/music/
-// 2. Put cover images (jpg/png) in assets/music/covers/
-// 3. Add entries to PLAYLIST below.
-//    - title : displayed in the LCD strip
-//    - src   : path to .mp3
-//    - cover : path to cover image (optional — falls back to default.png)
-// ============================================================
 const PLAYLIST = [
   {
     title: "Wii Party Soundtrack - Main Menu",
@@ -82,13 +71,11 @@ const PLAYLIST = [
     const DEFAULT = "assets/music/covers/default.png";
     const url = src || DEFAULT;
 
-    // show img, hide fallback initially
     coverImg.style.display = "block";
     coverFallback.style.display = "none";
 
     coverImg.src = url;
     coverImg.onerror = () => {
-      // try default before showing the ♪ fallback
       if (coverImg.src.includes("default.png")) {
         coverImg.style.display = "none";
         coverFallback.style.display = "flex";
